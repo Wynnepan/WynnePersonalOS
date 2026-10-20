@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f4ef" />
+    <title>Wynne's Space · 个人工作台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#">
+          <span class="brand-mark">W</span>
+          <span><strong>Wynne</strong><small>我的成长工作台</small></span>
+          <i>在线</i>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <p class="nav-label">GENERAL</p>
+          <button class="nav-item home-nav active" data-platform="home"><span class="nav-platform home-nav-icon">⌂</span>我的首页</button>
+          <p class="nav-label sub-label">CONTENT</p>
+          <div class="nav-group" data-nav-group="douyin">
+            <button class="nav-item" data-platform="douyin"><span class="nav-platform douyin-nav">♪</span>抖音工作台<i>12</i><b class="nav-chevron">⌄</b></button>
+            <div class="subnav">
+              <button class="active" data-target="douyinIdeas"><span></span>爆款灵感</button>
+              <button data-target="douyinRemix"><span></span>AI 二创</button>
+              <button data-target="douyinReview"><span></span>内容复盘</button>
+            </div>
+          </div>
+          <div class="nav-group" data-nav-group="xiaohongshu">
+            <button class="nav-item" data-platform="xiaohongshu"><span class="nav-platform xhs-nav">小</span>小红书图文<b class="nav-chevron">⌄</b></button>
+            <div class="subnav">
+              <button class="active" data-target="xhsBenchmarks"><span></span>每日对标账号</button>
+              <button data-target="xhsTopics"><span></span>上班族图文选题</button>
+              <button data-target="xhsCopy"><span></span>完整文案生成</button>
+              <button data-target="xhsStyles"><span></span>三种文案风格</button>
+              <button data-target="xhsReview"><span></span>今日笔记诊断</button>
+              <button data-target="xhsOptimize"><span></span>逐项优化</button>
+              <button data-target="xhsWeekly"><span></span>本周内容配比</button>
+            </div>
+          </div>
+          <p class="nav-label learning-label">LEARNING</p>
+          <button class="nav-item" data-platform="english"><span class="nav-platform english-nav">A</span>英语学习</button>
+          <button class="nav-item" data-platform="robotics"><span class="nav-platform robot-nav">R</span>机器人学习</button>
+          <button class="nav-item" data-platform="drums"><span class="nav-platform drum-nav">♩</span>架子鼓学习</button>
+          <button class="nav-item" data-platform="fitness"><span class="nav-platform fitness-nav">F</span>健身训练</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="streak-card">
+            <div class="streak-icon">◒</div>
+            <div><strong>连续行动 12 天</strong><span>今天已完成 2 项计划</span></div>
+          </div>
+          <div class="social-links" aria-label="联系方式">
+            <a href="https://weibo.com/" target="_blank" rel="noreferrer" title="微博"><span class="social-weibo">微</span><b>微博</b></a>
+            <a href="https://www.xiaohongshu.com/" target="_blank" rel="noreferrer" title="小红书"><span class="social-xhs">小</span><b>小红书</b></a>
+            <a href="https://github.com/" target="_blank" rel="noreferrer" title="GitHub"><span class="social-github">●</span><b>GitHub</b></a>
+            <a href="mailto:" title="邮箱"><span class="social-email">✉</span><b>邮箱</b></a>
+          </div>
+          <button class="profile">
+            <span class="avatar">P</span>
+            <span><strong>Wynne 的工作台</strong><small>成长型创作者</small></span>
+            <b>•••</b>
+          </button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="home-return nav-hidden" id="homeReturnBtn">⌂ 返回首页</button>
+          <div class="top-actions">
+            <button class="icon-btn" id="globalSearchBtn" aria-label="全局搜索" title="全局搜索">🔍</button>
+            <button class="icon-btn notification" id="notificationBtn" aria-label="通知" title="通知">🔔<i></i></button>
+            <button class="primary-btn nav-hidden" id="addTaskBtn">＋ 新建任务</button>
+          </div>
+        </header>
+
+        <div class="content">
+          <div id="homeDashboard" class="platform-dashboard active">
+            <section class="neko-home">
+              <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div><div class="aurora aurora-three"></div>
+              <aside class="home-project-rail glass-card">
+                <p class="rail-label">GENERAL</p>
+                <button class="rail-item active"><span>⌂</span>我的首页</button>
+                <p class="rail-label">CONTENT</p>
+                <button class="rail-item" data-open-platform="douyin"><span>🎵</span>抖音工作台<b>12</b></button>
+                <button class="rail-item" data-open-platform="xiaohongshu"><span>🍠</span>小红书图文</button>
+                <p class="rail-label">LEARNING</p>
+                <button class="rail-item" data-open-platform="english"><span>🇺🇸</span>英语学习</button>
+                <button class="rail-item" data-open-platform="robotics"><span>🤖</span>机器人学习</button>
+                <button class="rail-item" data-open-platform="drums"><span>🥁</span>架子鼓学习</button>
+                <button class="rail-item fitness-rail-item" data-open-platform="fitness"><span>🏋️</span>健身训练</button>
+                <div class="rail-fitness-sub"><span>🏊 游泳</span><span>🧘 普拉提</span><span>🏋️ 举铁</span></div>
+                <div class="rail-spacer"></div>
+                <div class="rail-streak"><span>◒</span><div><strong>连续行动 12 天</strong><small>今天已完成 2 项计划</small></div></div>
+              </aside>
+              <div class="home-profile-cluster">
+                <header class="home-intro glass-card">
+                  <img class="home-avatar" src="assets/wynne-cat.png" alt="Wynne 的猫猫头像" />
+                  <div class="home-about"><span class="home-kicker">WELCOME TO MY SPACE</span><h1>Hi, I'm <b>Wynne.</b></h1><p>在持续创作、学习和练习中，慢慢成为想成为的人。</p></div>
+                  <div class="home-status-row"><div class="home-status"><i></i>今日状态：正在生长</div></div>
+                </header>
+                <div class="intro-socials" aria-label="联系方式">
+                    <a href="https://weibo.com/" target="_blank" rel="noreferrer" aria-label="微博" title="微博链接待更新" class="weibo-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.4 11.2c-.7-.2-.3-.7-.3-.7s.7-1.1-.1-1.9c-1-1-3.4.1-3.4.1s-2.2-2.2-6.4.1C3.5 11.4 4 14.7 4 14.7c.1 2.9 4 4.7 7.8 4.7 4.9 0 8.2-2.8 8.2-5 0-2.2-1.6-3.2-1.6-3.2Z"/><ellipse cx="11.2" cy="14.5" rx="4.7" ry="2.9" fill="white"/><circle cx="10.2" cy="14" r="1.5"/><path d="M17 7.5c.7.2 1.3.8 1.5 1.5M17.3 5.2c1.7.4 3 1.7 3.4 3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                    <a href="https://www.xiaohongshu.com/" target="_blank" rel="noreferrer" aria-label="小红书" title="小红书链接待更新" class="xhs-logo"><svg viewBox="0 0 32 24" aria-hidden="true"><rect x="1" y="2" width="30" height="20" rx="6"/><path d="M6 8h4v8H6M12 8h4v8h-4M19 8v8m0-4h6m0-4v8" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+                    <a href="https://github.com/Wynnepan" target="_blank" rel="noreferrer" aria-label="GitHub" title="Wynnepan 的 GitHub" class="github-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 1.9v2.8c0 .4.2.6.7.5a10.1 10.1 0 0 0 6.8-9.6C22 6.6 17.5 2 12 2Z"/></svg></a>
+                    <button type="button" id="copyEmailBtn" data-email="" aria-label="联系邮箱待配置" title="联系邮箱待配置" class="email-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m5 8 7 5 7-5" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+              </div>
+              <div class="home-clock glass-card"><span class="clock-dot"></span><strong id="homeClock">09:41</strong><span class="clock-dot"></span></div>
+              <blockquote class="home-quote glass-card"><span>“</span><p>Per aspera ad astra</p><small>— FOR WYNNE</small></blockquote>
+              <section class="home-calendar glass-card">
+                <div class="calendar-head"><div><span>CALENDAR</span><strong id="calendarTitle">2026年7月</strong></div><div><button id="calendarPrev">‹</button><button id="calendarNext">›</button></div></div>
+                <div class="calendar-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                <div id="calendarDays" class="calendar-days"></div>
+                <div class="calendar-note"><i></i><span><b>今天</b><small>给自己留一点生长的时间</small></span></div>
+                <a id="feishuTodoLink" href="#" aria-label="飞书待办事项待配置" title="飞书待办链接待配置" class="home-todo-pin pin-logo"><span>📌</span></a>
+              </section>
+              <div class="home-today glass-card"><div class="today-head"><span>TODAY</span><b>今日进度</b></div><div class="today-number"><strong>2</strong><span>/ 5<br>已完成</span></div><div class="today-line"><i></i></div><p>下一项 · 从爆款灵感中完成一个选题</p></div>
+              <div class="home-footer-note">WYNNE'S PERSONAL WORKSPACE · 2026</div>
+            </section>
+          </div>
+
+          <div id="douyinDashboard" class="platform-dashboard">
+          <section class="hero">
+            <div>
+              <p class="eyebrow">GOOD MORNING, WYNNE</p>
+              <h1>今天，继续让自己<span>生长。</span></h1>
+              <p>把注意力放在重要的事上，灵感会在行动里出现。</p>
+            </div>
+            <div class="focus-card">
+              <div class="focus-ring"><span id="progressValue">67%</span></div>
+              <div><small>今日专注度</small><strong>状态很不错</strong><p>再完成 2 个任务，就能达成今日目标</p></div>
+            </div>
+          </section>
+
+          <section class="workspace-grid">
+            <div class="left-column">
+              <article class="panel tasks-panel">
+                <div class="panel-head">
+                  <div><h2>今日任务</h2><p><span id="doneCount">2</span> / <span id="totalCount">5</span> 已完成</p></div>
+                  <div class="task-tabs"><button class="active" data-filter="all">全部</button><button data-filter="content">内容</button><button data-filter="growth">成长</button></div>
+                </div>
+                <div id="taskList" class="task-list"></div>
+                <button class="add-inline" id="addInlineBtn">＋ 添加一个任务</button>
+              </article>
+
+              <article class="panel published-panel" id="douyinReview">
+                <div class="panel-head">
+                  <div><h2>今日已发布</h2><p>AI 为你发现 3 个可优化点</p></div>
+                  <button class="text-btn" id="openReview">查看完整复盘 →</button>
+                </div>
+                <div class="published-content">
+                  <div class="video-cover">
+                    <span class="cover-tag">自我成长</span>
+                    <div class="cover-title">停止内耗后<br />我才明白的<br /><b>3 件事</b></div>
+                    <button class="play-btn">▶</button>
+                    <small>00:48</small>
+                  </div>
+                  <div class="video-analysis">
+                    <div class="video-title"><h3>停止内耗后，我才明白的3件事</h3><span class="status-dot">已发布</span></div>
+                    <p>今天 10:32 发布 · 48 秒</p>
+                    <div class="metrics">
+                      <div><strong>2,846</strong><span>播放</span></div>
+                      <div><strong>186</strong><span>点赞</span></div>
+                      <div><strong>42</strong><span>收藏</span></div>
+                      <div><strong>6.5%</strong><span>互动率</span></div>
+                    </div>
+                    <div class="ai-tip"><span>✦</span><div><strong>可以更进一步</strong><p>前 3 秒的情绪钩子还不够强。建议开场改为：“我花了整整 3 年，才发现内耗根本不是想太多……”</p></div><button>采纳</button></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="right-column">
+              <article class="panel inspiration-panel" id="douyinIdeas">
+                <div class="panel-head">
+                  <div><h2>今日爆款灵感</h2><p>已按你的成长型风格筛选</p></div>
+                  <button class="refresh-btn" id="refreshIdeas">↻ 换一批</button>
+                </div>
+                <div class="trend-banner"><span>↗</span><p><strong>「低能量自救」正在升温</strong><small>近 24 小时热度上涨 86%</small></p><b>适合你</b></div>
+                <div id="ideaList" class="idea-list"></div>
+                <div id="douyinRemix" class="section-anchor" aria-hidden="true"></div>
+                <button class="all-ideas" id="allIdeasBtn">查看全部 12 条灵感 →</button>
+              </article>
+
+              <article class="quote-card">
+                <span>“</span>
+                <p>你不需要一下子变得很厉害，<br />只需要每天都比昨天多走一步。</p>
+                <small>— 写给今天的自己</small>
+                <div class="sprout">⌁</div>
+              </article>
+            </div>
+          </section>
+          </div>
+
+          <div id="xiaohongshuDashboard" class="platform-dashboard">
+            <section class="hero xhs-hero">
+              <div>
+                <p class="eyebrow xhs-eyebrow">XIAOHONGSHU · OFFICE CREATOR</p>
+                <h1>把上班的日常，写成<span>有用的故事。</span></h1>
+                <p>不制造焦虑，分享一个普通上班族真实、可复制的成长。</p>
+              </div>
+              <div class="xhs-position"><span>今日定位</span><strong>上班 × 自我成长</strong><small>真实感 40% · 实用性 35% · 情绪价值 25%</small></div>
+            </section>
+
+            <section class="xhs-grid">
+              <div class="xhs-main">
+                <article class="panel benchmark-panel" id="xhsBenchmarks">
+                  <div class="panel-head"><div><h2>今日对标账号</h2><p>不是照搬内容，而是拆解值得学习的表达方式</p></div><button class="refresh-btn" id="refreshAccounts">↻ 换一批</button></div>
+                  <div id="accountList" class="account-list"></div>
+                </article>
+
+                <article class="panel xhs-topic-panel" id="xhsTopics">
+                  <div class="panel-head"><div><h2>今天建议你写这个</h2><p>结合工作日场景与你的成长型定位</p></div><span class="match-badge">92% 匹配</span></div>
+                  <div class="topic-layout">
+                    <div class="note-cover"><span>下班后成长</span><h3>上班已经很累了<br>普通人如何保持<br><b>缓慢进步？</b></h3><small>我的 3 个低成本方法 →</small></div>
+                    <div class="topic-copy">
+                      <span class="topic-label">今日选题</span><h3>上班已经很累了，普通人如何保持缓慢进步？</h3>
+                      <p>关键词：低能量、下班后、微习惯、停止自责</p>
+                      <div class="title-options"><button>上班很累，但我没有停止成长</button><button>不自律的上班族，如何悄悄变好？</button><button>每天只做 20 分钟，我坚持了 100 天</button></div>
+                      <button class="xhs-primary" id="generateCopy">✦ 生成完整图文文案</button><span id="xhsCopy" class="section-anchor" aria-hidden="true"></span><span id="xhsStyles" class="section-anchor" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel note-review" id="xhsReview">
+                  <div class="panel-head"><div><h2>今日笔记诊断</h2><p>发布 4 小时 · AI 已完成首轮复盘</p></div><span class="review-score">内容分 78</span></div>
+                  <div class="review-title">《上班两年，我终于不再逼自己“高效”了》</div>
+                  <div class="xhs-metrics"><div><strong>3,286</strong><span>曝光</span></div><div><strong>8.7%</strong><span>点击率</span></div><div><strong>12.4%</strong><span>收藏率</span></div><div><strong>24</strong><span>评论</span></div></div>
+                  <div class="optimize-list" id="xhsOptimize">
+                    <div><span class="priority high">优先</span><p><strong>封面信息有些拥挤</strong><small>标题从 17 字缩短到 11 字，突出“停止假装高效”，预计提升点击率。</small></p><button data-optimize="封面标题已改为：停止假装高效">立即优化</button></div>
+                    <div><span class="priority">建议</span><p><strong>正文缺少可收藏的总结</strong><small>结尾增加一张“三个反内耗工作法”清单，让读者有保存理由。</small></p><button data-optimize="已在结尾加入方法清单">加入清单</button></div>
+                    <div><span class="priority">建议</span><p><strong>评论区可以主动提问</strong><small>置顶：“你最近一次假装忙碌是什么时候？”增加真实讨论。</small></p><button data-optimize="置顶评论已保存">保存话术</button></div>
+                  </div>
+                </article>
+              </div>
+
+              <aside class="xhs-side">
+                <article class="panel writing-guide">
+                  <div class="panel-head"><div><h2>上班族文案公式</h2><p>保留你的个人感，不写成营销号</p></div></div>
+                  <div class="formula-step"><b>01</b><div><strong>一个具体的上班瞬间</strong><p>“昨晚 9 点，我关掉第 6 版 PPT，突然不想再证明自己了。”</p></div></div>
+                  <div class="formula-step"><b>02</b><div><strong>说出读者心里的矛盾</strong><p>想进步，但下班后真的没有力气；想躺平，又害怕被落下。</p></div></div>
+                  <div class="formula-step"><b>03</b><div><strong>给 3 个亲测的小方法</strong><p>写动作，不写大道理。每个方法最好今天就能开始。</p></div></div>
+                  <div class="formula-step"><b>04</b><div><strong>用一个问题邀请交流</strong><p>不要“你学会了吗”，问一个能讲自己故事的问题。</p></div></div>
+                </article>
+                <article class="panel weekly-direction" id="xhsWeekly">
+                  <span class="mini-label">本周内容配比</span><h3>让账号既有用，也有你</h3>
+                  <div class="direction"><span style="--w:40%"></span><p><b>40%</b> 上班成长方法</p></div>
+                  <div class="direction coral"><span style="--w:35%"></span><p><b>35%</b> 真实职场故事</p></div>
+                  <div class="direction gold"><span style="--w:25%"></span><p><b>25%</b> 情绪与生活观察</p></div>
+                </article>
+              </aside>
+            </section>
+          </div>
+
+          <div id="englishDashboard" class="platform-dashboard learning-dashboard">
+            <section class="learning-hero english-hero">
+              <div><p class="eyebrow">ENGLISH LAB · DAILY 60 MIN</p><h1>听懂、说出、读深、<span>写清楚。</span></h1><p>每天四项都接触一点，词汇继续使用不背单词与《雅思词汇真经》。</p></div>
+              <div class="week-progress"><span>本周学习</span><strong>3 / 6 天</strong><div><i style="width:50%"></i></div><small>本周累计 3 小时 20 分</small></div>
+            </section>
+            <section class="daily-learning panel">
+              <div class="panel-head"><div><h2>今日英语计划</h2><p>约 65 分钟 · 已按听说读写拆分</p></div><button class="refresh-btn daily-refresh" data-message="已生成一组新的英语材料">↻ 换一天</button></div>
+              <div class="skill-grid">
+                <article class="skill-card listening"><div class="skill-icon">◖</div><span>LISTENING · 15 MIN</span><h3>BBC 6 Minute English</h3><p>第一遍盲听抓主旨，第二遍对照文本，记录 3 个表达。</p><a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" rel="noreferrer">打开今日节目 ↗</a><label><input type="checkbox" data-study="听力"> 完成今日听力</label></article>
+                <article class="skill-card speaking"><div class="skill-icon">◉</div><span>SPEAKING · 15 MIN</span><h3>TED 跟读与复述</h3><p>选择 3–6 分钟演讲，影子跟读 2 分钟，再用英文复述观点。</p><a href="https://www.ted.com/talks" target="_blank" rel="noreferrer">选择 TED 演讲 ↗</a><label><input type="checkbox" data-study="口语"> 完成录音复述</label></article>
+                <article class="skill-card reading"><div class="skill-icon">▤</div><span>READING · 20 MIN</span><h3>BBC Worklife 精读</h3><p>限时阅读一篇，标出论点与转折句，最后写一句英文摘要。</p><a href="https://www.bbc.com/worklife" target="_blank" rel="noreferrer">开始今日精读 ↗</a><label><input type="checkbox" data-study="阅读"> 完成精读笔记</label></article>
+                <article class="skill-card writing"><div class="skill-icon">✎</div><span>WRITING · 15 MIN</span><h3>IELTS 日更小作文</h3><p>写 120 字：Do flexible working hours improve productivity?</p><a href="https://ielts.org/take-a-test/preparation-resources" target="_blank" rel="noreferrer">查看官方备考资料 ↗</a><label><input type="checkbox" data-study="写作"> 完成 120 字</label></article>
+              </div>
+            </section>
+            <section class="learning-two-col">
+              <article class="panel vocab-panel"><div class="panel-head"><div><h2>今日词汇</h2><p>沿用你的现有学习系统</p></div><span class="resource-badge">25 MIN</span></div><div class="vocab-source"><b>不背单词 App</b><p>复习到期词汇 + 新学 20 词</p><button class="study-done">标记完成</button></div><div class="vocab-source"><b>《雅思词汇真经》</b><p>Chapter 08 · 教育与学习 · 2 页</p><button class="study-done">标记完成</button></div><div class="memory-tip">记忆建议：从今天的新词中选 5 个，分别写进听力复述和写作里。</div></article>
+              <article class="panel resource-library"><div class="panel-head"><div><h2>公开资料架</h2><p>按用途收藏，不用每天全部打开</p></div></div><div class="compact-links"><a href="https://learningenglish.voanews.com/" target="_blank"><b>VOA Learning English</b><span>慢速新闻与听力文本</span></a><a href="https://www.gutenberg.org/" target="_blank"><b>Project Gutenberg</b><span>免费英文原著</span></a><a href="https://owl.purdue.edu/" target="_blank"><b>Purdue OWL</b><span>英文写作与引用规范</span></a><a href="https://writeandimprove.com/" target="_blank"><b>Write & Improve</b><span>Cambridge 写作练习</span></a></div></article>
+            </section>
+          </div>
+
+          <div id="roboticsDashboard" class="platform-dashboard learning-dashboard robotics-theme">
+            <section class="learning-hero robotics-hero"><div><p class="eyebrow">ROBOTICS PATH · FROM ZERO TO RESEARCH</p><h1>先建立系统知识，<span>再走向研究。</span></h1><p>数学、编程、控制、感知与规划逐层推进，每一阶段都有可验证的项目。</p></div><div class="current-stage"><span>当前阶段</span><strong>01 · 基础准备</strong><small>建议每周学习 3 次，每次 60–90 分钟</small></div></section>
+            <section class="robot-layout">
+              <article class="panel roadmap-panel"><div class="panel-head"><div><h2>学习路线</h2><p>完成当前阶段后再解锁下一阶段</p></div></div><div class="roadmap">
+                <button class="road-step active" data-stage="0"><b>01</b><span><strong>基础准备</strong><small>Python · 线性代数 · 微积分 · Linux</small></span><i>进行中</i></button>
+                <button class="road-step" data-stage="1"><b>02</b><span><strong>机器人核心</strong><small>运动学 · 动力学 · 控制 · ROS 2</small></span><i>待开始</i></button>
+                <button class="road-step" data-stage="2"><b>03</b><span><strong>感知与自主</strong><small>计算机视觉 · SLAM · 路径规划</small></span><i>待开始</i></button>
+                <button class="road-step" data-stage="3"><b>04</b><span><strong>研究方向</strong><small>具身智能 · 操作 · 人机协作</small></span><i>待开始</i></button>
+              </div></article>
+              <div class="robot-main">
+                <article class="panel stage-detail"><div class="panel-head"><div><h2 id="stageTitle">阶段 01 · 基础准备</h2><p id="stageSubtitle">目标：看懂机器人课程中的数学表达，并能独立编程</p></div><span class="resource-badge">8–10 周</span></div><div id="robotResources" class="course-list"></div></article>
+                <article class="panel research-directions"><div class="panel-head"><div><h2>未来可以研究什么</h2><p>先了解方向，不需要现在就做选择</p></div></div><div class="direction-cards"><div><span>01</span><b>机器人操作</b><p>让机械臂理解环境并完成精细操作</p></div><div><span>02</span><b>移动与导航</b><p>定位、建图、规划与复杂环境决策</p></div><div><span>03</span><b>具身智能</b><p>视觉语言模型与真实机器人行动结合</p></div><div><span>04</span><b>人机协作</b><p>安全、自然且可解释地与人共同工作</p></div></div></article>
+              </div>
+            </section>
+          </div>
+
+          <div id="drumsDashboard" class="platform-dashboard learning-dashboard drums-theme">
+            <section class="learning-hero drums-hero"><div><p class="eyebrow">DRUM PRACTICE · WEEKLY RHYTHM</p><h1>一周一课，一次练习，<span>稳稳进步。</span></h1><p>记录老师布置的重点，用节拍器练习，并保留每周录音作为成长证据。</p></div><div class="next-lesson"><span>下次上课</span><strong>周六 15:00</strong><small>本周重点：八分音符律动与加花衔接</small></div></section>
+            <section class="drum-grid">
+              <div class="drum-main">
+                <article class="panel practice-session"><div class="panel-head"><div><h2>本周练习 · 60 分钟</h2><p>先慢后快，准确比速度重要</p></div><button class="xhs-primary" id="startPractice">▶ 开始练习</button></div><div class="practice-timeline"><div><b>10'</b><span><strong>热身</strong><small>单跳 / 双跳，60 → 80 BPM</small></span><input type="checkbox"></div><div><b>15'</b><span><strong>基本功</strong><small>Paradiddle，保持力度均匀</small></span><input type="checkbox"></div><div><b>20'</b><span><strong>本周律动</strong><small>八分音符 Rock Beat，70 BPM</small></span><input type="checkbox"></div><div><b>10'</b><span><strong>歌曲练习</strong><small>跟伴奏完成一遍，不中断</small></span><input type="checkbox"></div><div><b>5'</b><span><strong>录音复盘</strong><small>听稳定性、力度与过门衔接</small></span><input type="checkbox"></div></div></article>
+                <article class="panel sheet-panel"><div class="panel-head"><div><h2>本周线谱</h2><p>八分音符基础律动 · 4 小节</p></div><a href="https://vicfirth.com/blogs/40-essential-rudiments" target="_blank">查看 40 条基本功 ↗</a></div><div class="drum-sheet"><div class="staff"></div><div class="notes">♪　♪　♩　♪　　♪　♩　♪　♪<br><small>HH　HH　SD　HH　　HH　BD　HH　SD</small></div></div><div class="tempo-control"><span>目标速度</span><button data-bpm="-5">−</button><strong id="bpmValue">70 BPM</strong><button data-bpm="5">＋</button></div></article>
+              </div>
+              <aside class="drum-side"><article class="panel"><div class="panel-head"><div><h2>公开学习资料</h2><p>视频、基本功与乐谱</p></div></div><div class="resource-stack"><a href="https://www.drumeo.com/beat/" target="_blank"><span>VIDEO</span><b>Drumeo 免费鼓课</b><small>律动、歌曲、技巧与练习方法</small></a><a href="https://vicfirth.com/blogs/40-essential-rudiments" target="_blank"><span>PDF</span><b>Vic Firth 40 Rudiments</b><small>标准基本功示范与谱例</small></a><a href="https://www.musicca.com/drum-machine" target="_blank"><span>TOOL</span><b>在线鼓机</b><small>创建节奏并配合练习</small></a><a href="https://www.onlinedrummer.com/sheet-music/" target="_blank"><span>SHEET</span><b>Online Drummer 乐谱</b><small>歌曲鼓谱与基础练习</small></a><div class="cn-resource-title"><span>🇨🇳</span><div><b>中文免费教程</b><small>来自哔哩哔哩的持续更新入口</small></div></div><a href="https://search.bilibili.com/all?keyword=%E6%9E%B6%E5%AD%90%E9%BC%93%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B" target="_blank" rel="noreferrer"><span>B站</span><b>架子鼓零基础入门</b><small>坐姿、握槌、基本节奏与整套鼓认识</small></a><a href="https://search.bilibili.com/all?keyword=%E6%9E%B6%E5%AD%90%E9%BC%93%E5%9F%BA%E6%9C%AC%E5%8A%9F40%E6%9D%A1" target="_blank" rel="noreferrer"><span>B站</span><b>40 条基本功与手法</b><small>单跳、双跳、复合跳与节拍器练习</small></a><a href="https://search.bilibili.com/all?keyword=%E6%9E%B6%E5%AD%90%E9%BC%93%E8%AF%86%E8%B0%B1%E6%95%99%E7%A8%8B" target="_blank" rel="noreferrer"><span>B站</span><b>鼓谱识读教程</b><small>五线谱位置、时值、休止符与反复记号</small></a><a href="https://search.bilibili.com/all?keyword=%E6%9E%B6%E5%AD%90%E9%BC%93%E6%AD%8C%E6%9B%B2%E8%B7%9F%E7%BB%83" target="_blank" rel="noreferrer"><span>B站</span><b>中文歌曲跟鼓练习</b><small>从慢速歌曲开始练稳定与段落衔接</small></a></div></article><article class="panel lesson-notes"><div class="panel-head"><div><h2>上节课笔记</h2><p>点击即可编辑</p></div></div><textarea aria-label="架子鼓课程笔记">右脚踩底鼓时不要抬起整个腿；过门结束后的第一拍要稳。下周给老师听 70 BPM 的练习录音。</textarea><button class="study-done">保存笔记</button></article></aside>
+            </section>
+          </div>
+
+          <div id="fitnessDashboard" class="platform-dashboard learning-dashboard fitness-theme">
+            <section class="learning-hero fitness-hero"><div><p class="eyebrow">FITNESS · MOVE WITH PURPOSE</p><h1>游得更稳，练得更强，<span>身体更自由。</span></h1><p>围绕游泳、普拉提和举铁建立可持续的训练习惯，先掌握动作，再逐步增加强度。</p></div><div class="fitness-week"><span>本周训练</span><strong>1 / 3 次</strong><div><i></i></div><small>下一次：普拉提 · 周四 19:30</small></div></section>
+            <section class="panel fitness-plan"><div class="panel-head"><div><h2>本周训练安排</h2><p>三种训练各有侧重，注意恢复与动作质量</p></div><span class="resource-badge">约 180 分钟</span></div><div class="fitness-schedule">
+              <article><span class="fitness-icon swim">🏊</span><div><small>周二 · 45 MIN</small><h3>游泳 · 自由泳技术</h3><p>热身 200m · 打腿 4×50m · 划手配合 6×50m · 放松 100m</p></div><label><input type="checkbox" data-fitness="游泳"> 完成</label></article>
+              <article><span class="fitness-icon pilates">🧘</span><div><small>周四 · 50 MIN</small><h3>普拉提 · 核心与稳定</h3><p>呼吸激活 · 骨盆稳定 · 百次拍击 · 单腿伸展 · 脊柱放松</p></div><label><input type="checkbox" data-fitness="普拉提"> 完成</label></article>
+              <article><span class="fitness-icon lifting">🏋️</span><div><small>周六 · 60 MIN</small><h3>举铁 · 全身基础力量</h3><p>深蹲 · 罗马尼亚硬拉 · 卧推 · 坐姿划船，每项 3 组</p></div><label><input type="checkbox" data-fitness="举铁"> 完成</label></article>
+            </div></section>
+            <section class="fitness-knowledge-grid">
+              <article class="panel knowledge-card"><div class="knowledge-head"><span class="fitness-icon swim">🏊</span><div><small>SWIMMING</small><h2>游泳基础知识</h2></div></div><div class="knowledge-points"><div><b>01</b><p><strong>先把呼气做完整</strong><small>水下持续、平稳呼气，转头时只完成吸气，减少憋气造成的紧张。</small></p></div><div><b>02</b><p><strong>身体保持流线</strong><small>头部中立、髋部靠近水面；先追求阻力小，再追求划得快。</small></p></div><div><b>03</b><p><strong>用划频与距离记录进步</strong><small>记录每 25m 划水次数和用时，比单看总距离更容易发现技术变化。</small></p></div></div><a href="https://www.usaswimming.org/" target="_blank" rel="noreferrer">USA Swimming 公开资料 ↗</a></article>
+              <article class="panel knowledge-card"><div class="knowledge-head"><span class="fitness-icon pilates">🧘</span><div><small>PILATES</small><h2>普拉提基础知识</h2></div></div><div class="knowledge-points"><div><b>01</b><p><strong>呼吸与核心协同</strong><small>吸气扩张肋骨，呼气时温和收紧腹部；不要屏息完成动作。</small></p></div><div><b>02</b><p><strong>控制优先于幅度</strong><small>保持骨盆与脊柱位置稳定，在可控范围内完成动作，不追求过大幅度。</small></p></div><div><b>03</b><p><strong>感受目标肌群</strong><small>动作慢一点，分辨代偿与目标发力；出现锐痛应立即停止。</small></p></div></div><a href="https://www.nhs.uk/live-well/exercise/" target="_blank" rel="noreferrer">NHS 运动指导 ↗</a></article>
+              <article class="panel knowledge-card"><div class="knowledge-head"><span class="fitness-icon lifting">🏋️</span><div><small>STRENGTH</small><h2>举铁基础知识</h2></div></div><div class="knowledge-points"><div><b>01</b><p><strong>建立动作模式</strong><small>先学会蹲、髋铰链、推、拉和负重行走，再逐步增加重量。</small></p></div><div><b>02</b><p><strong>渐进超负荷</strong><small>每次只增加一个变量：重量、次数或组数，并保留动作质量。</small></p></div><div><b>03</b><p><strong>恢复也是训练</strong><small>同一肌群安排恢复时间，保证睡眠和蛋白质摄入，记录疲劳感受。</small></p></div></div><a href="https://www.acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines" target="_blank" rel="noreferrer">ACSM 运动指南 ↗</a></article>
+            </section>
+            <section class="panel cn-fitness-resources"><div class="panel-head"><div><h2>中文免费教程</h2><p>哔哩哔哩专题入口 · 建议先看技术讲解，再跟练</p></div><span class="bili-badge">BILIBILI</span></div><div class="cn-fitness-grid">
+              <a href="https://search.bilibili.com/all?keyword=%E8%87%AA%E7%94%B1%E6%B3%B3%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B" target="_blank" rel="noreferrer"><span>🏊</span><div><small>游泳 · 第一步</small><b>自由泳零基础入门</b><p>漂浮、打腿、换气与手臂配合</p></div><i>打开 ↗</i></a>
+              <a href="https://search.bilibili.com/all?keyword=%E8%87%AA%E7%94%B1%E6%B3%B3%E6%8D%A2%E6%B0%94%E6%95%99%E7%A8%8B" target="_blank" rel="noreferrer"><span>🌊</span><div><small>游泳 · 技术</small><b>自由泳换气专项</b><p>解决抬头、呛水与节奏不稳</p></div><i>打开 ↗</i></a>
+              <a href="https://search.bilibili.com/all?keyword=%E6%99%AE%E6%8B%89%E6%8F%90%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B" target="_blank" rel="noreferrer"><span>🧘</span><div><small>普拉提 · 第一步</small><b>垫上普拉提入门</b><p>呼吸、核心激活与骨盆稳定</p></div><i>打开 ↗</i></a>
+              <a href="https://search.bilibili.com/all?keyword=%E6%99%AE%E6%8B%89%E6%8F%90%E9%9B%B6%E5%9F%BA%E7%A1%80%E8%B7%9F%E7%BB%83" target="_blank" rel="noreferrer"><span>✨</span><div><small>普拉提 · 跟练</small><b>零基础完整跟练</b><p>选择 20–40 分钟低冲击课程</p></div><i>打开 ↗</i></a>
+              <a href="https://search.bilibili.com/all?keyword=%E5%81%A5%E8%BA%AB%E4%B8%BE%E9%93%81%E5%85%A5%E9%97%A8" target="_blank" rel="noreferrer"><span>🏋️</span><div><small>举铁 · 第一步</small><b>新手力量训练入门</b><p>训练计划、器械认识与动作选择</p></div><i>打开 ↗</i></a>
+              <a href="https://search.bilibili.com/all?keyword=%E6%B7%B1%E8%B9%B2%E7%A1%AC%E6%8B%89%E5%8A%A8%E4%BD%9C%E6%95%99%E7%A8%8B" target="_blank" rel="noreferrer"><span>💪</span><div><small>举铁 · 技术</small><b>深蹲与硬拉动作</b><p>学习站位、核心支撑与髋膝配合</p></div><i>打开 ↗</i></a>
+            </div><div class="resource-caution">教程用于学习动作思路；游泳请在有救生员的正规泳池练习，负重训练建议先由教练确认动作。</div></section>
+            <section class="fitness-bottom-grid"><article class="panel"><div class="panel-head"><div><h2>训练前检查</h2><p>每次开始前花一分钟确认</p></div></div><div class="safety-list"><label><input type="checkbox"> 今天没有异常疼痛或明显不适</label><label><input type="checkbox"> 已完成热身并准备饮水</label><label><input type="checkbox"> 今天的强度符合当前恢复状态</label></div></article><article class="panel fitness-note"><div class="panel-head"><div><h2>训练记录</h2><p>记录感受比只记录重量更有价值</p></div></div><textarea placeholder="今天完成了什么？动作哪里更顺？下次想调整什么？"></textarea><button class="study-done">保存训练记录</button></article></section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="taskDialog">
+      <form method="dialog" id="taskForm">
+        <div class="dialog-head"><div><small>NEW TASK</small><h2>添加今日任务</h2></div><button value="cancel" class="close-btn">×</button></div>
+        <label>任务内容<input id="taskInput" autocomplete="off" placeholder="例如：整理一条关于自律的口播脚本" required /></label>
+        <div class="form-row">
+          <label>类型<select id="taskType"><option value="content">内容创作</option><option value="growth">个人成长</option></select></label>
+          <label>预计用时<select id="taskTime"><option>20 分钟</option><option>30 分钟</option><option>45 分钟</option><option>1 小时</option></select></label>
+        </div>
+        <div class="dialog-actions"><button value="cancel" class="secondary-btn">取消</button><button type="submit" value="default" class="primary-btn">加入今天</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="remixDialog" class="remix-dialog">
+      <form method="dialog">
+        <div class="dialog-head"><div><small>AI REMIX</small><h2>把爆款，改成你的表达</h2></div><button value="cancel" class="close-btn">×</button></div>
+        <div class="remix-source" id="remixSource"></div>
+        <div class="script-box"><div class="script-head"><span>✦ 为你生成的二创结构</span><button type="button" id="regenerate">↻ 再生成</button></div><div id="scriptContent"></div></div>
+        <div class="dialog-actions"><button value="cancel" class="secondary-btn">先放放</button><button value="default" class="primary-btn" id="saveRemix">保存到二创工作室</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="copyDialog" class="remix-dialog">
+      <form method="dialog">
+        <div class="dialog-head"><div><small>XHS COPYWRITER</small><h2>今日小红书图文初稿</h2></div><button value="cancel" class="close-btn">×</button></div>
+        <div class="copy-tabs"><button type="button" class="active">真诚叙事</button><button type="button">干货清单</button><button type="button">轻松聊天</button></div>
+        <div class="script-box"><div class="script-head"><span>✦ 已按你的上班族成长风格生成</span><button type="button" id="copyText">复制全文</button></div><div id="xhsCopyContent"></div></div>
+        <div class="dialog-actions"><button value="cancel" class="secondary-btn">继续修改</button><button value="default" class="primary-btn" id="saveXhsCopy">保存为草稿</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="searchDialog" class="search-dialog">
+      <div class="search-shell">
+        <div class="search-top"><span>⌕</span><input id="globalSearchInput" type="search" autocomplete="off" placeholder="搜索工作区、功能或学习资料…" /><button id="closeSearchBtn" aria-label="关闭搜索">×</button></div>
+        <div class="search-hint"><span>全局搜索</span><small>输入关键词，例如“游泳”“BBC”“内容复盘”</small></div>
+        <div id="globalSearchResults" class="global-search-results"></div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

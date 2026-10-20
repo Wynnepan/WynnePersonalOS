@@ -1,0 +1,27 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# Local runtime data
+data/
+logs/
+*.log
+*.sqlite
+*.sqlite3
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
